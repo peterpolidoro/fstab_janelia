@@ -1,5 +1,11 @@
 # fstab_janelia
 
+## Installation
+
+```shell
+sudo apt-get install cifs-utils
+```
+
 ## Remount fstab
 
 ```shell
