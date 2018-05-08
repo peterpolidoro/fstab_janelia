@@ -1,0 +1,44 @@
+* fstab_janelia
+
+* Install Dependencies
+
+  #+BEGIN_SRC sh
+    sudo apt-get install cifs-utils
+  #+END_SRC
+
+* Modify fstab
+
+  #+BEGIN_SRC sh
+    cat fstab | sudo tee -a /etc/fstab
+  #+END_SRC
+
+* Setup smbcredentials
+
+  #+BEGIN_SRC sh
+    cp .smbcredentials ~/
+  #+END_SRC
+
+  Modify MyUsername and MyPassword in ~/.smbcredentials
+
+  #+BEGIN_SRC sh
+    sudo chown root ~/.smbcredentials
+    sudo chmod 600 ~/.smbcredentials
+  #+END_SRC
+
+* Make /mnt Directories
+
+  #+BEGIN_SRC sh
+    sudo mkdir /mnt/polidorop
+    sudo mkdir /mnt/bransonlab
+    sudo mkdir /mnt/hantmanlab
+    sudo mkdir /mnt/apig
+    sudo mkdir /mnt/svault1
+    sudo mkdir /mnt/idf
+    sudo mkdir /mnt/public
+  #+END_SRC
+
+* Remount fstab
+
+  #+BEGIN_SRC sh
+    sudo mount -a
+  #+END_SRC
